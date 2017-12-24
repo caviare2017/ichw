@@ -20,10 +20,8 @@ def wcount(lines, topn=10):
     dic={}
     docstr=docstr.replace("\r\n"," ")
     docstr=list(docstr.lower())
-    docstr=filter(lambda x : (x.isalpha() or x is " " or x is "'" or x is "-" or x is"_")  ,docstr)
+    docstr=filter(lambda x : (x.isalpha() or x is " ")  ,docstr)
     docstr=reduce(lambda x,y: x+y,docstr)
-    docstr=docstr.replace("-"," ")
-    docstr=docstr.replace("_"," ")
     list_0=docstr.split(" ")
     list_0=filter(lambda x:(x is not " " and x is not ""),list_0)
     for items in list_0:
